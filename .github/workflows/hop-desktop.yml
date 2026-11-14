@@ -426,7 +426,7 @@ jobs:
 
       - name: Validate macOS signing secrets
         id: macos-signing
-        if: runner.os == 'macOS' && (needs.prepare.outputs.create_release == 'true' || inputs.notarize_macos == true)
+        if: runner.os == 'macOS' && inputs.notarize_macos == true
         shell: bash
         run: |
           set -euo pipefail
